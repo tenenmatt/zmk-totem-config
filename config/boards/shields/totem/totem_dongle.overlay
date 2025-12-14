@@ -3,7 +3,8 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix_transform = &default_transform;
+        //zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &physical_layout0;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -30,4 +31,9 @@
     };
 
     // zmk docs suggest we need a physical_layout0 too
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default layout";
+        transform = <&default_transform>;
+    };
 };
